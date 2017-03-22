@@ -1,0 +1,2238 @@
+ new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) wiDOperator Xbee Test
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+Retrying send
+FWD- A: Replacing 0 (8) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+0 Received data from 0013A20040D96FC2: 
+$M3,9387,H1,112!
+
+<< $M3,9387,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9386
+command2: H
+key2: 1
+val2: 112
+delim: !
+2 M
+diff time: 194
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+2 Received data from 0013A20040D96FC2: 
+$I3,805,I4,793!
+
+<< $I3,805,I4,793!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 804
+command2: I
+key2: 4
+val2: 793
+delim: !
+4 I
+diff time: 116
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+4 Received data from 0013A20040D96FC2: 
+$A1,9007,A2,9007!
+
+<< $A1,9007,A2,9007!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 9006
+command2: A
+key2: 2
+val2: 9007
+delim: !
+6 A
+diff time: 118
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+6 Received data from 0013A20040D96FC2: 
+$O2,9060,O3,98!
+
+<< $O2,9060,O3,98!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9059
+command2: O
+key2: 3
+val2: 99
+delim: !
+8 O
+diff time: 114
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+8 Received data from 0013A20040D96FC2: 
+$U1,241,U2,210!
+
+<< $U1,241,U2,210!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 240
+command2: U
+key2: 2
+val2: 210
+delim: !
+10 U
+diff time: 116
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+10 Received data from 0013A20040D96FC2: 
+$M3,9384,H1,112!
+
+<< $M3,9384,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9383
+command2: H
+key2: 1
+val2: 112
+delim: !
+12 M
+diff time: 114
+!
+ FWD- Adding it to index 0
+Retrying send
+ speed L: 157 R: 30
+FWD- Adding it to index 0
+ speed L: 161 R: 32
+FWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 158 R: 32
+FWD- B: Replacing 0 (3) with new msg (3)
+12 Received data from 0013A20040D96FC2: 
+$I3,808,I4,817!
+
+<< $I3,808,I4,817!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 807
+command2: I
+key2: 4
+val2: 817
+delim: !
+14 I
+diff time: 183
+!
+  speed L: 158 R: 32
+FWD- Adding it to index 0
+Retrying send
+1 msg sent
+ speed L: 158 R: 32
+FWD- Adding it to index 0
+ speed L: 161 R: 32
+FWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 161 R: 32
+FWD- B: Replacing 0 (3) with new msg (3)
+14 Received data from 0013A20040D96FC2: 
+$A1,9002,A2,2!
+
+<< $A1,9002,A2,2!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 9001
+command2: A
+key2: 2
+val2: 3
+delim: !
+16 A
+diff time: 209
+!
+  speed L: 161 R: 32
+FWD- Adding it to index 0
+Retrying send
+ speed L: 161 R: 32
+FWD- Adding it to index 0
+ speed L: 158 R: 32
+FWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 158 R: 32
+FWD- B: Replacing 0 (3) with new msg (3)
+16 Received data from 0013A20040D96FC2: 
+$O2,73,O3,89!
+
+<< $O2,73,O3,89!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 73
+command2: O
+key2: 3
+val2: 90
+delim: !
+18 O
+diff time: 195
+!
+  speed L: 158 R: 32
+FWD- Adding it to index 0
+Retrying send
+2 msg sent
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+18 Received data from 0013A20040D96FC2: 
+$U1,254,U2,319!
+
+<< $U1,254,U2,319!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 253
+command2: U
+key2: 2
+val2: 319
+delim: !
+20 U
+diff time: 144
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+20 Received data from 0013A20040D96FC2: 
+$M3,9384,H1,111!
+
+<< $M3,9384,H1,111!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9383
+command2: H
+key2: 1
+val2: 111
+delim: !
+22 M
+diff time: 157
+!
+ FWD- Adding it to index 0
+Retrying send
+ speed L: 14 R: 13
+BWD- Adding it to index 0
+ speed L: 104 R: 104
+BWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 130 R: 120
+BWD- B: Replacing 0 (3) with new msg (3)
+22 Received data from 0013A20040D96FC2: 
+$I3,796,I4,822!
+
+<< $I3,796,I4,822!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 795
+command2: I
+key2: 4
+val2: 822
+delim: !
+24 I
+diff time: 183
+!
+  speed L: 131 R: 121
+BWD- Adding it to index 0
+Retrying send
+3 msg sent
+ speed L: 131 R: 121
+BWD- Adding it to index 0
+ speed L: 131 R: 121
+BWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 131 R: 121
+BWD- B: Replacing 0 (3) with new msg (3)
+24 Received data from 0013A20040D96FC2: 
+$A1,9001,A2,9000!
+
+<< $A1,9001,A2,9000!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 9000
+command2: A
+key2: 2
+val2: 9000
+delim: !
+26 A
+diff time: 212
+!
+  speed L: 131 R: 121
+BWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+26 Received data from 0013A20040D96FC2: 
+$O2,9028,O3,251!
+
+<< $O2,9028,O3,251!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9027
+command2: O
+key2: 3
+val2: 251
+delim: !
+28 O
+diff time: 123
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+28 Received data from 0013A20040D96FC2: 
+$U1,240,U2,214!
+
+<< $U1,240,U2,214!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 239
+command2: U
+key2: 2
+val2: 214
+delim: !
+30 U
+diff time: 117
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+ speed L: 27 R: 21
+FWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 39 R: 23
+FWD- B: Replacing 0 (3) with new msg (3)
+30 Received data from 0013A20040D96FC2: 
+$M3,9383,H1,112!
+
+<< $M3,9383,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9382
+command2: H
+key2: 1
+val2: 112
+delim: !
+32 M
+diff time: 157
+!
+  speed L: 155 R: 38
+FWD- Adding it to index 0
+Retrying send
+ speed L: 157 R: 41
+FWD- Adding it to index 0
+ speed L: 157 R: 41
+FWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 157 R: 41
+FWD- B: Replacing 0 (3) with new msg (3)
+32 Received data from 0013A20040D96FC2: 
+$I3,808,I4,760!
+
+<< $I3,808,I4,760!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 807
+command2: I
+key2: 4
+val2: 760
+delim: !
+34 I
+diff time: 196
+!
+  speed L: 157 R: 41
+FWD- Adding it to index 0
+Retrying send
+4 msg sent
+ speed L: 157 R: 41
+FWD- Adding it to index 0
+ speed L: 157 R: 41
+FWD- B: Replacing 0 (3) with new msg (3)
+34 Received data from 0013A20040D96FC2: 
+$A1,9001,A2,9001!
+
+<< $A1,9001,A2,9001!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 9000
+command2: A
+key2: 2
+val2: 9001
+delim: !
+36 A
+diff time: 144
+!
+  speed L: 171 R: 51
+FWD- Adding it to index 0
+Retrying send
+5 msg sent
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+36 Received data from 0013A20040D96FC2: 
+$O2,70,O3,154!
+
+<< $O2,70,O3,154!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 70
+command2: O
+key2: 3
+val2: 154
+delim: !
+38 O
+diff time: 144
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+38 Received data from 0013A20040D96FC2: 
+$U1,249,U2,140!
+
+<< $U1,249,U2,140!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 248
+command2: U
+key2: 2
+val2: 140
+delim: !
+40 U
+diff time: 158
+!
+ FWD- Adding it to index 0
+Retrying send
+ speed L: 128 R: 119
+BWD- Adding it to index 0
+ speed L: 128 R: 119
+BWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 128 R: 119
+BWD- B: Replacing 0 (3) with new msg (3)
+40 Received data from 0013A20040D96FC2: 
+$M3,9385,H1,112!
+
+<< $M3,9385,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9384
+command2: H
+key2: 1
+val2: 112
+delim: !
+42 M
+diff time: 185
+!
+  speed L: 128 R: 119
+BWD- Adding it to index 0
+Retrying send
+ speed L: 127 R: 122
+BWD- Adding it to index 0
+ speed L: 130 R: 120
+BWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 130 R: 120
+BWD- B: Replacing 0 (3) with new msg (3)
+42 Received data from 0013A20040D96FC2: 
+$I3,808,I4,820!
+
+<< $I3,808,I4,820!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 807
+command2: I
+key2: 4
+val2: 820
+delim: !
+44 I
+diff time: 199
+!
+  speed L: 130 R: 120
+BWD- Adding it to index 0
+Retrying send
+6 msg sent
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+44 Received data from 0013A20040D96FC2: 
+$A1,0,A2,0!
+
+<< $A1,0,A2,0!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 0
+command2: A
+key2: 2
+val2: 1
+delim: !
+46 A
+diff time: 142
+!
+ FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+Retrying send
+7 msg sent
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+46 Received data from 0013A20040D96FC2: 
+$O2,9042,O3,9138!
+
+<< $O2,9042,O3,9138!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9041
+command2: O
+key2: 3
+val2: 9138
+delim: !
+48 O
+diff time: 144
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+48 Received data from 0013A20040D96FC2: 
+$U1,219,U2,241!
+
+<< $U1,219,U2,241!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 218
+command2: U
+key2: 2
+val2: 241
+delim: !
+50 U
+diff time: 120
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+50 Received data from 0013A20040D96FC2: 
+$M3,9383,H1,112!
+
+<< $M3,9383,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9382
+command2: H
+key2: 1
+val2: 112
+delim: !
+52 M
+diff time: 111
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+52 Received data from 0013A20040D96FC2: 
+$I3,847,I4,801!
+
+<< $I3,847,I4,801!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 846
+command2: I
+key2: 4
+val2: 801
+delim: !
+54 I
+diff time: 110
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+54 Received data from 0013A20040D96FC2: 
+$A1,1,A2,9004!
+
+<< $A1,1,A2,9004!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 1
+command2: A
+key2: 2
+val2: 9004
+delim: !
+56 A
+diff time: 114
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+56 Received data from 0013A20040D96FC2: 
+$O2,9061,O3,9133!
+
+<< $O2,9061,O3,9133!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9060
+command2: O
+key2: 3
+val2: 9133
+delim: !
+58 O
+diff time: 117
+!
+ FWD- Adding it to index 0
+Retrying send
+ speed L: 1 R: 29
+FWD- Adding it to index 0
+ speed L: 0 R: 30
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+58 Received data from 0013A20040D96FC2: 
+$U1,186,U2,246!
+
+<< $U1,186,U2,246!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 185
+command2: U
+key2: 2
+val2: 246
+delim: !
+60 U
+diff time: 154
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+60 Received data from 0013A20040D96FC2: 
+$M3,9381,H1,112!
+
+<< $M3,9381,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9380
+command2: H
+key2: 1
+val2: 112
+delim: !
+62 M
+diff time: 111
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+62 Received data from 0013A20040D96FC2: 
+$I3,777,I4,799!
+
+<< $I3,777,I4,799!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 776
+command2: I
+key2: 4
+val2: 799
+delim: !
+64 I
+diff time: 114
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+64 Received data from 0013A20040D96FC2: 
+$A1,9002,A2,9003!
+
+<< $A1,9002,A2,9003!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 9001
+command2: A
+key2: 2
+val2: 9003
+delim: !
+66 A
+diff time: 112
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+ speed L: 58 R: 53
+BWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 71 R: 65
+BWD- B: Replacing 0 (3) with new msg (3)
+66 Received data from 0013A20040D96FC2: 
+$O2,9082,O3,188!
+
+<< $O2,9082,O3,188!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9081
+command2: O
+key2: 3
+val2: 188
+delim: !
+68 O
+diff time: 156
+!
+  speed L: 108 R: 99
+BWD- Adding it to index 0
+Retrying send
+8 msg sent
+ speed L: 130 R: 120
+BWD- Adding it to index 0
+ speed L: 130 R: 120
+BWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 130 R: 120
+BWD- B: Replacing 0 (3) with new msg (3)
+68 Received data from 0013A20040D96FC2: 
+$U1,205,U2,252!
+
+<< $U1,205,U2,252!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 204
+command2: U
+key2: 2
+val2: 252
+delim: !
+70 U
+diff time: 212
+!
+  speed L: 130 R: 120
+BWD- Adding it to index 0
+Retrying send
+ speed L: 63 R: 63
+BWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+70 Received data from 0013A20040D96FC2: 
+$M3,9382,H1,112!
+
+<< $M3,9382,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9381
+command2: H
+key2: 1
+val2: 112
+delim: !
+72 M
+diff time: 151
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+72 Received data from 0013A20040D96FC2: 
+$I3,813,I4,843!
+
+<< $I3,813,I4,843!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 812
+command2: I
+key2: 4
+val2: 843
+delim: !
+74 I
+diff time: 161
+!
+ FWD- Adding it to index 0
+Retrying send
+ speed L: 139 R: 97
+FWD- Adding it to index 0
+ speed L: 138 R: 92
+FWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 139 R: 97
+FWD- B: Replacing 0 (3) with new msg (3)
+74 Received data from 0013A20040D96FC2: 
+$A1,9000,A2,1!
+
+<< $A1,9000,A2,1!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 8999
+command2: A
+key2: 2
+val2: 2
+delim: !
+76 A
+diff time: 180
+!
+  speed L: 138 R: 95
+FWD- Adding it to index 0
+Retrying send
+9 msg sent
+ speed L: 139 R: 97
+FWD- Adding it to index 0
+ speed L: 139 R: 97
+FWD- B: Replacing 0 (3) with new msg (3)
+76 Received data from 0013A20040D96FC2: 
+$O2,9002,O3,9012!
+
+<< $O2,9002,O3,9012!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9001
+command2: O
+key2: 3
+val2: 9012
+delim: !
+78 O
+diff time: 144
+!
+  speed L: 139 R: 97
+FWD- Adding it to index 0
+Retrying send
+10 msg sent
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+78 Received data from 0013A20040D96FC2: 
+$U1,213,U2,299!
+
+<< $U1,213,U2,299!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 212
+command2: U
+key2: 2
+val2: 299
+delim: !
+80 U
+diff time: 143
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+80 Received data from 0013A20040D96FC2: 
+$M3,9385,H1,112!
+
+<< $M3,9385,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9384
+command2: H
+key2: 1
+val2: 112
+delim: !
+82 M
+diff time: 161
+!
+ FWD- Adding it to index 0
+Retrying send
+ speed L: 39 R: 36
+BWD- Adding it to index 0
+ speed L: 120 R: 124
+BWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 124 R: 124
+BWD- B: Replacing 0 (3) with new msg (3)
+82 Received data from 0013A20040D96FC2: 
+$I3,761,I4,774!
+
+<< $I3,761,I4,774!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 760
+command2: I
+key2: 4
+val2: 774
+delim: !
+84 I
+diff time: 186
+!
+  speed L: 130 R: 120
+BWD- Adding it to index 0
+Retrying send
+11 msg sent
+ speed L: 130 R: 120
+BWD- Adding it to index 0
+ speed L: 130 R: 120
+BWD- B: Replacing 0 (3) with new msg (3)
+84 Received data from 0013A20040D96FC2: 
+$A1,0,A2,9000!
+
+<< $A1,0,A2,9000!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 0
+command2: A
+key2: 2
+val2: 9000
+delim: !
+86 A
+diff time: 146
+!
+  speed L: 130 R: 120
+BWD- Adding it to index 0
+Retrying send
+12 msg sent
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+86 Received data from 0013A20040D96FC2: 
+$O2,9114,O3,218!
+
+<< $O2,9114,O3,218!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9113
+command2: O
+key2: 3
+val2: 218
+delim: !
+88 O
+diff time: 144
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+88 Received data from 0013A20040D96FC2: 
+$U1,220,U2,234!
+
+<< $U1,220,U2,234!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 219
+command2: U
+key2: 2
+val2: 234
+delim: !
+90 U
+diff time: 120
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+90 Received data from 0013A20040D96FC2: 
+$M3,9388,H1,112!
+
+<< $M3,9388,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9387
+command2: H
+key2: 1
+val2: 112
+delim: !
+92 M
+diff time: 158
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+92 Received data from 0013A20040D96FC2: 
+$I3,796,I4,777!
+
+<< $I3,796,I4,777!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 795
+command2: I
+key2: 4
+val2: 777
+delim: !
+94 I
+diff time: 159
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+94 Received data from 0013A20040D96FC2: 
+$A1,5,A2,9008!
+
+<< $A1,5,A2,9008!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 5
+command2: A
+key2: 2
+val2: 9008
+delim: !
+96 A
+diff time: 155
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+96 Received data from 0013A20040D96FC2: 
+$O2,17,O3,57!
+
+<< $O2,17,O3,57!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 17
+command2: O
+key2: 3
+val2: 58
+delim: !
+98 O
+diff time: 115
+!
+ FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+Retrying send
+13 msg sent
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+98 Received data from 0013A20040D96FC2: 
+$U1,213,U2,216!
+
+<< $U1,213,U2,216!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 212
+command2: U
+key2: 2
+val2: 216
+delim: !
+100 U
+diff time: 144
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+100 Received data from 0013A20040D96FC2: 
+$M3,9387,H1,112!
+
+<< $M3,9387,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9386
+command2: H
+key2: 1
+val2: 112
+delim: !
+102 M
+diff time: 111
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+102 Received data from 0013A20040D96FC2: 
+$I3,802,I4,819!
+
+<< $I3,802,I4,819!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 801
+command2: I
+key2: 4
+val2: 819
+delim: !
+104 I
+diff time: 112
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+104 Received data from 0013A20040D96FC2: 
+$A1,9000,A2,9003!
+
+<< $A1,9000,A2,9003!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 8999
+command2: A
+key2: 2
+val2: 9003
+delim: !
+106 A
+diff time: 116
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+106 Received data from 0013A20040D96FC2: 
+$O2,9051,O3,88!
+
+<< $O2,9051,O3,88!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9050
+command2: O
+key2: 3
+val2: 89
+delim: !
+108 O
+diff time: 153
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+108 Received data from 0013A20040D96FC2: 
+$U1,174,U2,220!
+
+<< $U1,174,U2,220!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 173
+command2: U
+key2: 2
+val2: 220
+delim: !
+110 U
+diff time: 154
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+110 Received data from 0013A20040D96FC2: 
+$M3,9388,H1,112!
+
+<< $M3,9388,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9387
+command2: H
+key2: 1
+val2: 112
+delim: !
+112 M
+diff time: 119
+!
+ FWD- Adding it to index 0
+Retrying send
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+112 Received data from 0013A20040D96FC2: 
+$I3,805,I4,799!
+
+<< $I3,805,I4,799!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 804
+command2: I
+key2: 4
+val2: 799
+delim: !
+114 I
+diff time: 116
+!
+ FWD- Adding it to index 0
+Retrying send
+ speed L: 151 R: 59
+FWD- Adding it to index 0
+ speed L: 154 R: 59
+FWD- B: Replacing 0 (3) with new msg (3)
+ speed L: 149 R: 58
+FWD- B: Replacing 0 (3) with new msg (3)
+114 Received data from 0013A20040D96FC2: 
+$A1,1,A2,9000!
+
+<< $A1,1,A2,9000!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 1
+command2: A
+key2: 2
+val2: 9000
+delim: !
+116 A
+diff time: 180
+!
+  speed L: 151 R: 59
+FWD- Adding it to index 0
+Retrying send
+14 msg sent
+ speed L: 96 R: 73
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+FWD- B: Replacing 0 (3) with new msg (3)
+116 Received data from 0013A20040D96FC2: 
+$O2,35,O3,61!
+
+<< $O2,35,O3,61!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 35
+command2: O
+key2: 3
+val2: 62
+delim: !
+118 O
+diff time: 166
+!
+ FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+Retrying send
+15 msg sent
+FWD- Adding it to index 0
+FWD- B: Replacing 0 (3) with new msg (3)
+118 Received data from 0013A20040D96FC2: 
+$U1,196,U2,251!
+
+<< $U1,196,U2,251!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 195
+command2: U
+key2: 2
+val2: 251
+delim: !
+120 U
+diff time: 100
+16 msg sent
+!
+ 120 Received data from 0013A20040D96FC2: 
+$M1,266,M2,9156!
+
+<< $M1,266,M2,9156!
+---CALLBACK---
+action: $
+command: M
+key: 1
+val: 265
+command2: M
+key2: 2
+val2: 9156
+delim: !
+122 M
+diff time: 0
+17 msg sent
+!
+ 122 Received data from 0013A20040D96FC2: 
+$M3,9391,H1,112!
+
+<< $M3,9391,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9390
+command2: H
+key2: 1
+val2: 112
+delim: !
+124 M
+diff time: 0
+18 msg sent
+!
+ 124 Received data from 0013A20040D96FC2: 
+$I1,859,I2,853!
+
+<< $I1,859,I2,853!
+---CALLBACK---
+action: $
+command: I
+key: 1
+val: 858
+command2: I
+key2: 2
+val2: 853
+delim: !
+126 I
+diff time: 0
+19 msg sent
+!
+ 126 Received data from 0013A20040D96FC2: 
+$I3,746,I4,784!
+
+<< $I3,746,I4,784!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 745
+command2: I
+key2: 4
+val2: 784
+delim: !
+128 I
+diff time: 0
+20 msg sent
+!
+ 128 Received data from 0013A20040D96FC2: 
+$I5,760,T1,27!
+
+<< $I5,760,T1,27!
+---CALLBACK---
+action: $
+command: I
+key: 5
+val: 759
+command2: T
+key2: 1
+val2: 28
+delim: !
+130 I
+diff time: 0
+21 msg sent
+!
+ 130 Received data from 0013A20040D96FC2: 
+$A1,1,A2,9000!
+
+<< $A1,1,A2,9000!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 1
+command2: A
+key2: 2
+val2: 9000
+delim: !
+132 A
+diff time: 0
+22 msg sent
+!
+ 132 Received data from 0013A20040D96FC2: 
+$A3,101,O1,14!
+
+<< $A3,101,O1,14!
+---CALLBACK---
+action: $
+command: A
+key: 3
+val: 100
+command2: O
+key2: 1
+val2: 15
+delim: !
+134 A
+diff time: 0
+23 msg sent
+!
+ 134 Received data from 0013A20040D96FC2: 
+$O2,9105,O3,126!
+
+<< $O2,9105,O3,126!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9104
+command2: O
+key2: 3
+val2: 126
+delim: !
+136 O
+diff time: 0
+24 msg sent
+!
+ 136 Received data from 0013A20040D96FC2: 
+$F1,170,F2,270!
+
+<< $F1,170,F2,270!
+---CALLBACK---
+action: $
+command: F
+key: 1
+val: 169
+command2: F
+key2: 2
+val2: 270
+delim: !
+138 F
+diff time: 0
+25 msg sent
+!
+ 138 Received data from 0013A20040D96FC2: 
+$U1,195,U2,222!
+
+<< $U1,195,U2,222!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 194
+command2: U
+key2: 2
+val2: 222
+delim: !
+140 U
+diff time: 0
+26 msg sent
+!
+ 140 Received data from 0013A20040D96FC2: 
+$M1,260,M2,9159!
+
+<< $M1,260,M2,9159!
+---CALLBACK---
+action: $
+command: M
+key: 1
+val: 259
+command2: M
+key2: 2
+val2: 9159
+delim: !
+142 M
+diff time: 0
+27 msg sent
+!
+ 142 Received data from 0013A20040D96FC2: 
+$M3,9390,H1,112!
+
+<< $M3,9390,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9389
+command2: H
+key2: 1
+val2: 112
+delim: !
+144 M
+diff time: 0
+28 msg sent
+!
+ 144 Received data from 0013A20040D96FC2: 
+$I1,852,I2,849!
+
+<< $I1,852,I2,849!
+---CALLBACK---
+action: $
+command: I
+key: 1
+val: 851
+command2: I
+key2: 2
+val2: 849
+delim: !
+146 I
+diff time: 0
+29 msg sent
+!
+ 146 Received data from 0013A20040D96FC2: 
+$I3,756,I4,833!
+
+<< $I3,756,I4,833!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 755
+command2: I
+key2: 4
+val2: 833
+delim: !
+148 I
+diff time: 0
+30 msg sent
+!
+ 148 Received data from 0013A20040D96FC2: 
+$I5,794,T1,27!
+
+<< $I5,794,T1,27!
+---CALLBACK---
+action: $
+command: I
+key: 5
+val: 793
+command2: T
+key2: 1
+val2: 28
+delim: !
+150 I
+diff time: 0
+31 msg sent
+!
+ 150 Received data from 0013A20040D96FC2: 
+$A1,1,A2,0!
+
+<< $A1,1,A2,0!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 1
+command2: A
+key2: 2
+val2: 1
+delim: !
+152 A
+diff time: 0
+32 msg sent
+!
+ 152 Received data from 0013A20040D96FC2: 
+$A3,103,O1,9685!
+
+<< $A3,103,O1,9685!
+---CALLBACK---
+action: $
+command: A
+key: 3
+val: 102
+command2: O
+key2: 1
+val2: 9685
+delim: !
+154 A
+diff time: 0
+33 msg sent
+!
+ 154 Received data from 0013A20040D96FC2: 
+$O2,9192,O3,315!
+
+<< $O2,9192,O3,315!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9191
+command2: O
+key2: 3
+val2: 315
+delim: !
+156 O
+diff time: 0
+34 msg sent
+!
+ 156 Received data from 0013A20040D96FC2: 
+$F1,158,F2,166!
+
+<< $F1,158,F2,166!
+---CALLBACK---
+action: $
+command: F
+key: 1
+val: 157
+command2: F
+key2: 2
+val2: 166
+delim: !
+158 F
+diff time: 0
+35 msg sent
+!
+ 158 Received data from 0013A20040D96FC2: 
+$U1,268,U2,209!
+
+<< $U1,268,U2,209!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 267
+command2: U
+key2: 2
+val2: 209
+delim: !
+160 U
+diff time: 0
+36 msg sent
+!
+ 160 Received data from 0013A20040D96FC2: 
+$M1,291,M2,9150!
+
+<< $M1,291,M2,9150!
+---CALLBACK---
+action: $
+command: M
+key: 1
+val: 290
+command2: M
+key2: 2
+val2: 9150
+delim: !
+162 M
+diff time: 0
+37 msg sent
+!
+ 162 Received data from 0013A20040D96FC2: 
+$M3,9385,H1,112!
+
+<< $M3,9385,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9384
+command2: H
+key2: 1
+val2: 112
+delim: !
+164 M
+diff time: 0
+38 msg sent
+!
+ 164 Received data from 0013A20040D96FC2: 
+$I1,852,I2,863!
+
+<< $I1,852,I2,863!
+---CALLBACK---
+action: $
+command: I
+key: 1
+val: 851
+command2: I
+key2: 2
+val2: 863
+delim: !
+166 I
+diff time: 0
+39 msg sent
+!
+ 166 Received data from 0013A20040D96FC2: 
+$I3,819,I4,815!
+
+<< $I3,819,I4,815!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 818
+command2: I
+key2: 4
+val2: 815
+delim: !
+168 I
+diff time: 0
+40 msg sent
+!
+ 168 Received data from 0013A20040D96FC2: 
+$I5,797,T1,27!
+
+<< $I5,797,T1,27!
+---CALLBACK---
+action: $
+command: I
+key: 5
+val: 796
+command2: T
+key2: 1
+val2: 28
+delim: !
+170 I
+diff time: 0
+41 msg sent
+!
+ 170 Received data from 0013A20040D96FC2: 
+$A1,9005,A2,9001!
+
+<< $A1,9005,A2,9001!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 9004
+command2: A
+key2: 2
+val2: 9001
+delim: !
+172 A
+diff time: 0
+42 msg sent
+!
+ 172 Received data from 0013A20040D96FC2: 
+$A3,100,O1,70!
+
+<< $A3,100,O1,70!
+---CALLBACK---
+action: $
+command: A
+key: 3
+val: 99
+command2: O
+key2: 1
+val2: 71
+delim: !
+174 A
+diff time: 0
+43 msg sent
+!
+ 174 Received data from 0013A20040D96FC2: 
+$O2,9026,O3,55!
+
+<< $O2,9026,O3,55!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9025
+command2: O
+key2: 3
+val2: 56
+delim: !
+176 O
+diff time: 0
+44 msg sent
+!
+ 176 Received data from 0013A20040D96FC2: 
+$F1,192,F2,259!
+
+<< $F1,192,F2,259!
+---CALLBACK---
+action: $
+command: F
+key: 1
+val: 191
+command2: F
+key2: 2
+val2: 259
+delim: !
+178 F
+diff time: 0
+45 msg sent
+!
+ 178 Received data from 0013A20040D96FC2: 
+$U1,271,U2,285!
+
+<< $U1,271,U2,285!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 270
+command2: U
+key2: 2
+val2: 285
+delim: !
+180 U
+diff time: 0
+46 msg sent
+!
+ 180 Received data from 0013A20040D96FC2: 
+$M1,293,M2,9149!
+
+<< $M1,293,M2,9149!
+---CALLBACK---
+action: $
+command: M
+key: 1
+val: 292
+command2: M
+key2: 2
+val2: 9149
+delim: !
+182 M
+diff time: 0
+47 msg sent
+!
+ 182 Received data from 0013A20040D96FC2: 
+$M3,9387,H1,112!
+
+<< $M3,9387,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9386
+command2: H
+key2: 1
+val2: 112
+delim: !
+184 M
+diff time: 0
+48 msg sent
+!
+ 184 Received data from 0013A20040D96FC2: 
+$I1,850,I2,845!
+
+<< $I1,850,I2,845!
+---CALLBACK---
+action: $
+command: I
+key: 1
+val: 849
+command2: I
+key2: 2
+val2: 845
+delim: !
+186 I
+diff time: 0
+49 msg sent
+!
+ 186 Received data from 0013A20040D96FC2: 
+$I3,793,I4,811!
+
+<< $I3,793,I4,811!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 792
+command2: I
+key2: 4
+val2: 811
+delim: !
+188 I
+diff time: 0
+50 msg sent
+!
+ 188 Received data from 0013A20040D96FC2: 
+$I5,816,T1,27!
+
+<< $I5,816,T1,27!
+---CALLBACK---
+action: $
+command: I
+key: 5
+val: 815
+command2: T
+key2: 1
+val2: 28
+delim: !
+190 I
+diff time: 0
+51 msg sent
+!
+ 190 Received data from 0013A20040D96FC2: 
+$A1,9005,A2,9002!
+
+<< $A1,9005,A2,9002!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 9004
+command2: A
+key2: 2
+val2: 9002
+delim: !
+192 A
+diff time: 0
+52 msg sent
+!
+ 192 Received data from 0013A20040D96FC2: 
+$A3,101,O1,56!
+
+<< $A3,101,O1,56!
+---CALLBACK---
+action: $
+command: A
+key: 3
+val: 100
+command2: O
+key2: 1
+val2: 57
+delim: !
+194 A
+diff time: 0
+53 msg sent
+!
+ 194 Received data from 0013A20040D96FC2: 
+$O2,9053,O3,56!
+
+<< $O2,9053,O3,56!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9052
+command2: O
+key2: 3
+val2: 57
+delim: !
+196 O
+diff time: 0
+54 msg sent
+!
+ 196 Received data from 0013A20040D96FC2: 
+$F1,164,F2,272!
+
+<< $F1,164,F2,272!
+---CALLBACK---
+action: $
+command: F
+key: 1
+val: 163
+command2: F
+key2: 2
+val2: 272
+delim: !
+198 F
+diff time: 0
+55 msg sent
+!
+ 198 Received data from 0013A20040D96FC2: 
+$U1,221,U2,278!
+
+<< $U1,221,U2,278!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 220
+command2: U
+key2: 2
+val2: 278
+delim: !
+200 U
+diff time: 0
+56 msg sent
+!
+ 200 Received data from 0013A20040D96FC2: 
+$M1,294,M2,9150!
+
+<< $M1,294,M2,9150!
+---CALLBACK---
+action: $
+command: M
+key: 1
+val: 293
+command2: M
+key2: 2
+val2: 9150
+delim: !
+202 M
+diff time: 0
+57 msg sent
+!
+ 202 Received data from 0013A20040D96FC2: 
+$M3,9391,H1,112!
+
+<< $M3,9391,H1,112!
+---CALLBACK---
+action: $
+command: M
+key: 3
+val: 9390
+command2: H
+key2: 1
+val2: 112
+delim: !
+204 M
+diff time: 0
+58 msg sent
+!
+ 204 Received data from 0013A20040D96FC2: 
+$I1,829,I2,832!
+
+<< $I1,829,I2,832!
+---CALLBACK---
+action: $
+command: I
+key: 1
+val: 828
+command2: I
+key2: 2
+val2: 832
+delim: !
+206 I
+diff time: 0
+59 msg sent
+!
+ 206 Received data from 0013A20040D96FC2: 
+$I3,765,I4,841!
+
+<< $I3,765,I4,841!
+---CALLBACK---
+action: $
+command: I
+key: 3
+val: 764
+command2: I
+key2: 4
+val2: 841
+delim: !
+208 I
+diff time: 0
+60 msg sent
+!
+ 208 Received data from 0013A20040D96FC2: 
+$I5,798,T1,27!
+
+<< $I5,798,T1,27!
+---CALLBACK---
+action: $
+command: I
+key: 5
+val: 797
+command2: T
+key2: 1
+val2: 28
+delim: !
+210 I
+diff time: 0
+61 msg sent
+!
+ 210 Received data from 0013A20040D96FC2: 
+$A1,9005,A2,9002!
+
+<< $A1,9005,A2,9002!
+---CALLBACK---
+action: $
+command: A
+key: 1
+val: 9004
+command2: A
+key2: 2
+val2: 9002
+delim: !
+212 A
+diff time: 0
+62 msg sent
+!
+ 212 Received data from 0013A20040D96FC2: 
+$A3,101,O1,57!
+
+<< $A3,101,O1,57!
+---CALLBACK---
+action: $
+command: A
+key: 3
+val: 100
+command2: O
+key2: 1
+val2: 58
+delim: !
+214 A
+diff time: 0
+63 msg sent
+!
+ 214 Received data from 0013A20040D96FC2: 
+$O2,9088,O3,74!
+
+<< $O2,9088,O3,74!
+---CALLBACK---
+action: $
+command: O
+key: 2
+val: 9087
+command2: O
+key2: 3
+val2: 75
+delim: !
+216 O
+diff time: 0
+64 msg sent
+!
+ 216 Received data from 0013A20040D96FC2: 
+$F1,202,F2,279!
+
+<< $F1,202,F2,279!
+---CALLBACK---
+action: $
+command: F
+key: 1
+val: 201
+command2: F
+key2: 2
+val2: 279
+delim: !
+218 F
+diff time: 0
+65 msg sent
+!
+ 218 Received data from 0013A20040D96FC2: 
+$U1,294,U2,250!
+
+<< $U1,294,U2,250!
+---CALLBACK---
+action: $
+command: U
+key: 1
+val: 293
+command2: U
+key2: 2
+val2: 250
+delim: !
+220 U
+diff time: 0
+66 msg sent
+!
+ 220 Received data fr
