@@ -86,6 +86,7 @@
 
 // messages
 #define MSG_QUEUE_SIZE 3
+#define REMOTE_OP_TIMEOUT 300
 
 struct Msg {
   uint8_t priority;
@@ -149,6 +150,8 @@ class Bowie {
     uint8_t msgs_in_queue;
     uint8_t msg_send_index;
     Msg msg_queue[MSG_QUEUE_SIZE];
+    unsigned long last_rx;
+    uint8_t unlikely_count = 0;
 
     // servos
     Servo arm;

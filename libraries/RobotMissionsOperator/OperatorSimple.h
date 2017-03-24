@@ -47,7 +47,7 @@
 
 //#define DEBUG false
 #define COMM_DEBUG false
-#define OP_DEBUG false
+#define OP_DEBUG true
 
 // button pins
 #define REDBUTTON 8

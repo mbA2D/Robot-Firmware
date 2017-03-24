@@ -5,6 +5,7 @@
 Bowie::Bowie() {
   msgs_in_queue = 0;
   msg_send_index = 0;
+  unlikely_count = 0;
 
   gpio_pin1_input = true;
   gpio_pin2_input = true;
@@ -94,6 +95,16 @@ void Bowie::update() {
 
   // specific things to do if remote operation is enabled
   if(REMOTE_OP_ENABLED) {
+
+    if(millis()-last_rx >= REMOTE_OP_TIMEOUT) {
+      digitalWrite(COMM_LED, LOW);
+      motor_setDir(0, MOTOR_DIR_REV);
+      motor_setSpeed(0, 0);
+      motor_setDir(1, MOTOR_DIR_REV);
+      motor_setSpeed(1, 0);
+    } else {
+      digitalWrite(COMM_LED, HIGH);
+    }
 
   }
 
@@ -475,6 +486,17 @@ void Bowie::insertNextMsg(Msg m) {
 
 void Bowie::control(char action, char cmd, uint8_t key, uint16_t val, char cmd2, uint8_t key2, uint16_t val2, char delim) {
   
+  last_rx = millis();
+
+  // we've seen this happen *sometimes*, and it is highly unlikely that this would be an
+  // intentional command. let's make sure they mean this at least 2 times before listening
+  if(val == 255 && val2 == 255 && cmd == 'L' && cmd2 == 'R') {
+    unlikely_count++;
+    if(unlikely_count <= 2) return;
+  } else {
+    unlikely_count = 0;
+  }
+
   if(action == '#') { // going straight
 
     if(cmd == 'L') { // left motor

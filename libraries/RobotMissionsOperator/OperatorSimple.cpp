@@ -137,6 +137,7 @@ void Operator::nunchuckControl() {
           m.delim = '!';
         } else {
           // previously:
+          Serial << "why1" << endl;
           m.priority = 3;
           m.action = '@';
           m.cmd = 'L';
@@ -161,6 +162,7 @@ void Operator::nunchuckControl() {
           m.delim = '!';
         } else {
           // previously:
+          Serial << "why2" << endl;
           m.priority = 3;
           m.action = '@';
           m.cmd = 'L';
@@ -479,10 +481,10 @@ void Operator::updateButtons() {
     m.delim = '!';
 
     if(blue_on) {
-      digitalWrite(LED1, HIGH);
+      digitalWrite(LED4, HIGH);
       slower_speed = true;
     } else {
-      digitalWrite(LED1, LOW);
+      digitalWrite(LED4, LOW);
       slower_speed = false;
     }
 

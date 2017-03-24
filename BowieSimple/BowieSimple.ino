@@ -69,7 +69,7 @@ void setup() {
   bowie.turnOnLights();
 
   // promulgate setup
-  promulgate.LOG_LEVEL = Promulgate::DEBUG;
+  promulgate.LOG_LEVEL = Promulgate::ERROR_;
   promulgate.set_rx_callback(received_action);
   promulgate.set_tx_callback(transmit_complete);
   promulgate.set_debug_stream(&Serial);
@@ -108,9 +108,9 @@ void loop() {
     for(int i=0; i<rx.getDataLength(); i++) {
       char c = message_rx[i];
       promulgate.organize_message(c);
-      Serial << c;
+      //Serial << c;
     }
-    Serial << "rx data len: " << rx.getDataLength() << endl;
+    //Serial << "rx data len: " << rx.getDataLength() << endl;
   }
 
   // update robot
