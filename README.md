@@ -91,6 +91,7 @@ All messages can be given a priority, however this number is not sent. Lower num
 - Libraries in this repository (BowieSimple, OperatorSimple, and PromulgateBig)
 
 ### Robot (Bowie)
+- Servo - _(comes with arduino)_
 - [XBee](https://github.com/andrewrapp/xbee-arduino)
 - [Streaming](http://arduiniana.org/libraries/streaming/)
 - [Adafruit Sensor](https://github.com/adafruit/Adafruit_Sensor)
