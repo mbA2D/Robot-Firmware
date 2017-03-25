@@ -2,17 +2,17 @@
 
 1. The operator (ie, remote control unit, the one with the wii nunchuck) sends packets to the robot via an Xbee (2.4GHz radio)
 
-  - Packets are formatted using "Promulgate", check out below for the structure
+  * Packets are formatted using "Promulgate", check out below for the structure
 
-  - It is all UDP, the Xbees are sending data without ACKs
+  * It is all UDP, the Xbees are sending data without ACKs
 
-  - This is in order to achieve a faster latency, we've been seeing an average of 150ms
+  * This is in order to achieve a faster latency, we've been seeing an average of 150ms
 
-  - Some messages can have a higher priority for inserting / replacing higher in the queue, see more below
+  * Some messages can have a higher priority for inserting / replacing higher in the queue, see more below
 
 2. The robot receives the packets, then parses it to do an action
 
-  - Safety: if no message has been received in some time, the robot brakes its motors
+  * Safety: if no message has been received in some time, the robot brakes its motors
 
 3. Robot then sends back a message with sensor updates, iterating through a list of sensors - Operator receives the message
 
@@ -25,13 +25,9 @@ Here is how packets are formatted:
 
 `char action, char cmd, uint8_t key, uint16_t val, char cmd2, uint8_t key2, uint16_t val2, char delim`
 
-**Action:** Specifies the type of message. eg, '$' is used for iterated sensor data from robot
+**Action:** Specifies the type of message. eg, '$' is used for iterated sensor data from robot -Valid chars = '~', '@', '#', '^', '&', '$'
 
-Valid chars = '~', '@', '#', '^', '&', '$'
-
-**Command (cmd & cmd2):** Char representing the command, see below for API
-
-Valid chars = [A-Z], [a-z]
+**Command (cmd & cmd2):** Char representing the command, see below for API - Valid chars = [A-Z], [a-z]
 
 **Key (key & key2):** 8 bit unsigned int representing a 'key' ... it's a number
 
