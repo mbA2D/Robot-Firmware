@@ -116,6 +116,28 @@ void loop() {
   // ---- 4. update
   controller.update();
 
+  // ---- 5. (temporary) relay external commands
+  if(Serial.available()) {
+    char c = Serial.read();
+    switch(c) {
+      case 'A': // forward
+      controller.addNextMsg( 3, '#', 'L', 1, 255, 'R', 1, 255, '!' );
+      break;
+      case 'B': // backward
+      controller.addNextMsg( 3, '#', 'L', 0, 255, 'R', 0, 255, '!' );
+      break;
+      case 'C': // left
+      controller.addNextMsg( 3, '#', 'L', 0, 255, 'R', 1, 255, '!' );
+      break;
+      case 'D': // right
+      controller.addNextMsg( 3, '#', 'L', 1, 255, 'R', 0, 255, '!' );
+      break;
+      case 'E': // sequence
+      controller.addNextMsg( 3, '#', 'G', 0, 1, '0', 0, 0, '!' );
+      break;
+    }
+  }
+
 }
 
 
