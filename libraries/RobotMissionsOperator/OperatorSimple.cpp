@@ -113,10 +113,10 @@ void Operator::nunchuckControl() {
       m.priority = 3;
       m.action = '#';
       m.cmd = 'L';
-      m.key = 1;
+      m.key = 0;
       m.val = 0;
       m.cmd2 = 'R';
-      m.key2 = 1;
+      m.key2 = 0;
       m.val2 = 0;
       m.delim = '!';
       
@@ -130,21 +130,20 @@ void Operator::nunchuckControl() {
           m.action = '@';
           m.cmd = 'L';
           m.key = 1;
-          m.val = 255;
+          m.val = 64;
           m.cmd2 = 'R';
           m.key2 = 1;
-          m.val2 = 64;
+          m.val2 = 255;
           m.delim = '!';
         } else {
           // previously:
-          Serial << "why1" << endl;
           m.priority = 3;
           m.action = '@';
           m.cmd = 'L';
-          m.key = 1;
+          m.key = 0;
           m.val = 255;
           m.cmd2 = 'R';
-          m.key2 = 0;
+          m.key2 = 1;
           m.val2 = 255;
           m.delim = '!';
         }
@@ -155,21 +154,20 @@ void Operator::nunchuckControl() {
           m.action = '@';
           m.cmd = 'L';
           m.key = 1;
-          m.val = 64;
-          m.cmd2 = 'R';
-          m.key2 = 1;
-          m.val2 = 255;
-          m.delim = '!';
-        } else {
-          // previously:
-          Serial << "why2" << endl;
-          m.priority = 3;
-          m.action = '@';
-          m.cmd = 'L';
-          m.key = 0;
           m.val = 255;
           m.cmd2 = 'R';
           m.key2 = 1;
+          m.val2 = 64;
+          m.delim = '!';
+        } else {
+          // previously:
+          m.priority = 3;
+          m.action = '@';
+          m.cmd = 'L';
+          m.key = 1;
+          m.val = 255;
+          m.cmd2 = 'R';
+          m.key2 = 0;
           m.val2 = 255;
           m.delim = '!';
         }

@@ -68,8 +68,8 @@
 #define GPIO_PIN5 A16
 
 // motor directions
-#define MOTOR_DIR_FWD true
-#define MOTOR_DIR_REV false
+#define MOTOR_DIR_FWD false
+#define MOTOR_DIR_REV true
 
 // servo values
 #define ARM_MAX 150
