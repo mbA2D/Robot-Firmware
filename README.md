@@ -5,9 +5,12 @@
     * It is all UDP, the Xbees are sending data without ACKs
     * This is in order to achieve a faster latency, we've been seeing an average of 150ms
     * Some messages can have a higher priority for inserting / replacing higher in the queue, see more below
+
 2. The robot receives the packets, then parses it to do an action
     * Safety: if no message has been received in some time, the robot brakes its motors
+
 3. Robot then sends back a message with sensor updates, iterating through a list of sensors - Operator receives the message
+
 4. Process repeats, continuing this exchange of messages
 
 
