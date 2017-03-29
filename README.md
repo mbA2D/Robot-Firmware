@@ -1,5 +1,7 @@
 # Overview
 
+This is the code that runs on the robot and operator unit. It is a combination of a library and an Arduino sketch. You can add your own actions to the sketch, or if you prefer for it to be a 'default' behaviour - then add it to the library. Here's how the process works:
+
 1. The operator (ie, remote control unit, the one with the wii nunchuck) sends packets to the robot via an Xbee (2.4GHz radio)
     * Packets are formatted using "Promulgate", check out below for the structure
     * It is all UDP, the Xbees are sending data without ACKs
