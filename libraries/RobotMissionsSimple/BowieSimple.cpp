@@ -489,6 +489,21 @@ void Bowie::control(char action, char cmd, uint8_t key, uint16_t val, char cmd2,
   
   last_rx = millis();
 
+  Cmd c1 = { '0', 0, 0 };
+  Cmd c2 = { '0', 0, 0 };
+  c1.cmd = cmd;
+  c1.key = key;
+  c1.val = val;
+  c2.cmd = cmd2;
+  c2.key = key2;
+  c2.val = val2;
+  Cmd packets[2] = { c1, c2 };
+
+  if(COMM_DEBUG) {
+    Serial << "*c1 cmd: " << packets[0].cmd << " key: " << packets[0].key << " val: " << packets[0].val << endl;
+    Serial << "*c2 cmd: " << packets[1].cmd << " key: " << packets[1].key << " val: " << packets[1].val << endl;
+  }
+
   // we've seen this happen *sometimes*, and it is highly unlikely that this would be an
   // intentional command. let's make sure they mean this at least 2 times before listening
   if(val == 255 && val2 == 255 && cmd == 'L' && cmd2 == 'R') {
@@ -498,288 +513,158 @@ void Bowie::control(char action, char cmd, uint8_t key, uint16_t val, char cmd2,
     unlikely_count = 0;
   }
 
-  // todo
-  // - make a 'cmd' struct
-  // - instantiate 2 for both cmds
-  // - add both instances to an array
-  // - makes it easier to go through both
+  if(action == '#') {
 
-  if(action == '#') { // going straight
+    for(int i=0; i<2; i++) {
 
-    if(cmd == 'L') { // left motor
-      if(val > 255) key = 99; // something weird here, set key to skip
-      if(key == 1) { // fwd
-        analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, val);
-      } else if(key == 0) { // bwd
-        analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
-        motor_setDir(0, MOTOR_DIR_REV);
-        motor_setSpeed(0, val);
+      if(packets[i].cmd == 'L') { // left motor
+        if(packets[i].val > 255) packets[i].key = 99; // something weird here, set key to skip
+        if(packets[i].key == 1) { // fwd
+          analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
+          motor_setDir(0, MOTOR_DIR_FWD);
+          motor_setSpeed(0, val);
+        } else if(packets[i].key == 0) { // bwd
+          analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
+          motor_setDir(0, MOTOR_DIR_REV);
+          motor_setSpeed(0, val);
+        }
       }
+
+      if(packets[i].cmd == 'R') { // right motor
+        if(packets[i].val > 255) packets[i].key = 99; // something weird here, set key to skip
+        if(packets[i].key == 1) { // fwd
+          analogWrite(BRIGHT_LED_RIGHT, MAX_BRIGHTNESS);
+          motor_setDir(1, MOTOR_DIR_FWD);
+          motor_setSpeed(1, val);
+        } else if(packets[i].key == 0) { // bwd
+          analogWrite(BRIGHT_LED_RIGHT, MIN_BRIGHTNESS);
+          motor_setDir(1, MOTOR_DIR_REV);
+          motor_setSpeed(1, val);
+        }
+      }
+
+      if(packets[i].cmd == 'P') { // red button
+        if(packets[i].val == 1) {
+          motor_setDir(0, MOTOR_DIR_FWD);
+          motor_setSpeed(0, 60);
+          motor_setDir(1, MOTOR_DIR_FWD);
+          motor_setSpeed(1, 60);
+        }
+      }
+
+      if(packets[i].cmd == 'G') { // green button
+        if(packets[i].val == 1) {
+          leftBork();
+          motor_setDir(0, MOTOR_DIR_REV);
+          motor_setSpeed(0, 60);
+          motor_setDir(1, MOTOR_DIR_REV);
+          motor_setSpeed(1, 60);
+        }
+      }
+
+      if(packets[i].cmd == 'Y') { // yellow button
+        if(packets[i].val == 1) {
+          motor_setDir(0, MOTOR_DIR_FWD);
+          motor_setSpeed(0, 40);
+          motor_setDir(1, MOTOR_DIR_FWD);
+          motor_setSpeed(1, 120);
+        }
+      }
+
+      if(packets[i].cmd == 'B') { // blue button
+        if(packets[i].val == 1) {
+          motor_setDir(0, MOTOR_DIR_FWD);
+          motor_setSpeed(0, 120);
+          motor_setDir(1, MOTOR_DIR_FWD);
+          motor_setSpeed(1, 40);
+        }
+      }
+
+      if(packets[i].cmd == 'W') { // white button
+        if(packets[i].val == 1) {
+          analogWrite(BRIGHT_LED_RIGHT, MAX_BRIGHTNESS);
+          analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
+          delay(500);
+          analogWrite(BRIGHT_LED_RIGHT, MIN_BRIGHTNESS);
+          analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
+          delay(500);
+        }
+      }
+
+      if(packets[i].cmd == 'Q') {
+        if(packets[i].val == 0) {
+          if(packets[i].key == 0) {
+            digitalWrite(BRIGHT_LED_LEFT, LOW);
+          } else if(packets[i].key == 1) {
+            digitalWrite(BRIGHT_LED_RIGHT, LOW);
+          }
+        } else if(packets[i].val == 255) {
+          if(packets[i].key == 0) {
+            digitalWrite(BRIGHT_LED_LEFT, HIGH);
+          } else if(packets[i].key == 1) {
+            digitalWrite(BRIGHT_LED_RIGHT, HIGH);
+          }
+        } else {
+          if(packets[i].key == 0) {
+            analogWrite(BRIGHT_LED_LEFT, val);
+          } else if(packets[i].key == 1) {
+            analogWrite(BRIGHT_LED_RIGHT, val);
+          }
+        }
+      }
+
     }
+  } // -- end of '#' action specifier
 
-    if(cmd2 == 'L') { // left motor
-      if(val2 > 255) key2 = 99; // something weird here, set key to skip
-      if(key2 == 1) { // fwd
-        analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, val2);
-      } else if(key2 == 0) { // bwd
-        analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
-        motor_setDir(0, MOTOR_DIR_REV);
-        motor_setSpeed(0, val2);
+
+  if(action == '@') {
+
+    for(int i=0; i<2; i++) {
+
+      if(packets[i].cmd == 'L') { // left motor
+        if(packets[i].val > 255) packets[i].key = 99; // something weird here, set key to skip
+        if(packets[i].key == 1) { // fwd
+          analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
+          motor_setDir(0, MOTOR_DIR_FWD);
+          motor_setSpeed(0, val);
+        } else if(packets[i].key == 0) { // bwd
+          analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
+          motor_setDir(0, MOTOR_DIR_REV);
+          motor_setSpeed(0, val);
+        }
       }
+
+      if(packets[i].cmd == 'R') { // right motor
+        if(packets[i].val > 255) packets[i].key = 99; // something weird here, set key to skip
+        if(packets[i].key == 1) { // fwd
+          digitalWrite(BRIGHT_LED_RIGHT, HIGH);
+          motor_setDir(1, MOTOR_DIR_FWD);
+          motor_setSpeed(1, val);
+        } else if(packets[i].key == 0) { // bwd
+          digitalWrite(BRIGHT_LED_RIGHT, LOW);
+          motor_setDir(1, MOTOR_DIR_REV);
+          motor_setSpeed(1, val);
+        }
+      }
+
+      if(packets[i].cmd == 'S') { // arm (data from 0-45)
+        int the_pos = (int)map(val, 0, 45, ARM_MIN, ARM_MAX);
+
+        arm.write(the_pos);
+        arm2.write(180-the_pos);
+
+        Serial << "\narm angle: " << the_pos << endl;
+      }
+
+      if(packets[i].cmd == 'C') { // claw / scoop
+        int the_pos = (int)map(val, 0, 45, CLAW_MIN, CLAW_MAX);
+        claw.writeMicroseconds(the_pos);
+
+        Serial << "\nclaw angle: " << the_pos << endl;
+      }
+
     }
-
-    if(cmd == 'R') { // right motor
-      if(val > 255) key = 99; // something weird here, set key to skip
-      if(key == 1) { // fwd
-        analogWrite(BRIGHT_LED_RIGHT, MAX_BRIGHTNESS);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, val);
-      } else if(key == 0) { // bwd
-        analogWrite(BRIGHT_LED_RIGHT, MIN_BRIGHTNESS);
-        motor_setDir(1, MOTOR_DIR_REV);
-        motor_setSpeed(1, val);
-      }
-    }
-
-    if(cmd2 == 'R') { // right motor
-      if(val2 > 255) key2 = 99; // something weird here, set key to skip
-      if(key2 == 1) { // fwd
-        analogWrite(BRIGHT_LED_RIGHT, MAX_BRIGHTNESS);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, val2);
-      } else if(key2 == 0) { // bwd
-        analogWrite(BRIGHT_LED_RIGHT, MIN_BRIGHTNESS);
-        motor_setDir(1, MOTOR_DIR_REV);
-        motor_setSpeed(1, val2);
-      }
-    }
-
-    if(cmd == 'P') { // red button
-      if(val == 1) {
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, 60);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, 60);
-      }
-    }
-
-    if(cmd2 == 'P') { // red button
-      if(val2 == 1) {
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, 60);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, 60);
-      }
-    }
-
-    if(cmd == 'G') { // green button
-      if(val == 1) {
-        leftBork();
-        motor_setDir(0, MOTOR_DIR_REV);
-        motor_setSpeed(0, 60);
-        motor_setDir(1, MOTOR_DIR_REV);
-        motor_setSpeed(1, 60);
-      }
-    }
-
-    if(cmd2 == 'G') { // green button
-      if(val2 == 1) {
-        motor_setDir(0, MOTOR_DIR_REV);
-        motor_setSpeed(0, 60);
-        motor_setDir(1, MOTOR_DIR_REV);
-        motor_setSpeed(1, 60);
-      }
-    }
-
-    if(cmd == 'Y') { // yellow button
-      if(val == 1) {
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, 40);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, 120);
-      }
-    }
-
-    if(cmd2 == 'Y') { // yellow button
-      if(val2 == 1) {
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, 40);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, 120);
-      }
-    }
-
-    if(cmd == 'B') { // blue button
-      if(val == 1) {
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, 120);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, 40);
-      }
-    }
-
-    if(cmd2 == 'B') { // blue button
-      if(val2 == 1) {
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, 120);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, 40);
-      }
-    }
-
-    if(cmd == 'W') { // white button
-      if(val == 1) {
-        analogWrite(BRIGHT_LED_RIGHT, MAX_BRIGHTNESS);
-        analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
-        delay(500);
-        analogWrite(BRIGHT_LED_RIGHT, MIN_BRIGHTNESS);
-        analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
-        delay(500);
-      }
-    }
-
-    if(cmd2 == 'W') { // white button
-      if(val2 == 1) {
-        analogWrite(BRIGHT_LED_RIGHT, MAX_BRIGHTNESS);
-        analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
-        delay(500);
-        analogWrite(BRIGHT_LED_RIGHT, MIN_BRIGHTNESS);
-        analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
-        delay(500);
-      }
-    }
-
-  }
-
-
-  if(action == '@') { // turning
-
-    Serial << "turning" << endl;
-    Serial << "val: " << val << " val2: " << val2 << endl;
-
-    if(cmd == 'L') { // left motor
-      //if(val > 255) // something weird here, set key to skip
-      if(key == 1) { // fwd
-        analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, val);
-      } else if(key == 0) { // bwd
-        analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
-        motor_setDir(0, MOTOR_DIR_REV);
-        motor_setSpeed(0, val);
-      }
-    }
-
-    if(cmd2 == 'L') { // left motor
-      if(val2 > 255) // something weird here, set key to skip
-      if(key2 == 1) { // fwd
-        analogWrite(BRIGHT_LED_LEFT, MAX_BRIGHTNESS);
-        motor_setDir(0, MOTOR_DIR_FWD);
-        motor_setSpeed(0, val2);
-      } else if(key2 == 0) { // bwd
-        analogWrite(BRIGHT_LED_LEFT, MIN_BRIGHTNESS);
-        motor_setDir(0, MOTOR_DIR_REV);
-        motor_setSpeed(0, val2);
-      }
-    }
-
-    if(cmd == 'R') { // right motor
-      if(val > 255) // something weird here, set key to skip
-      if(key == 1) { // fwd
-        digitalWrite(BRIGHT_LED_RIGHT, HIGH);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, val);
-      } else if(key == 0) { // bwd
-        digitalWrite(BRIGHT_LED_RIGHT, LOW);
-        motor_setDir(1, MOTOR_DIR_REV);
-        motor_setSpeed(1, val);
-      }
-    }
-
-    if(cmd2 == 'R') { // right motor
-      //if(val2 > 255) // something weird here, set key to skip
-      if(key2 == 1) { // fwd
-        digitalWrite(BRIGHT_LED_RIGHT, HIGH);
-        motor_setDir(1, MOTOR_DIR_FWD);
-        motor_setSpeed(1, val2);
-      } else if(key2 == 0) { // bwd
-        digitalWrite(BRIGHT_LED_RIGHT, LOW);
-        motor_setDir(1, MOTOR_DIR_REV);
-        motor_setSpeed(1, val2);
-      }
-    }
-
-  }
-
-  if(cmd == 'S') { // arm (data from 0-45)
-
-    int the_pos = (int)map(val, 0, 45, ARM_MIN, ARM_MAX);
-
-    arm.write(the_pos);
-    arm2.write(180-the_pos);
-
-    Serial << "\narm angle: " << the_pos << endl;
-
-  }
-
-  if(cmd == 'C') { // claw
-
-    int the_pos = (int)map(val, 0, 45, CLAW_MIN, CLAW_MAX);
-    claw.writeMicroseconds(the_pos);
-
-    Serial << "\nclaw angle: " << the_pos << endl;
-
-  }
-
-  if(cmd == 'Q') {
-    if(val == 0) {
-      if(key == 0) {
-        digitalWrite(BRIGHT_LED_LEFT, LOW);
-      } else if(key == 1) {
-        digitalWrite(BRIGHT_LED_RIGHT, LOW);
-      }
-    } else if(val == 255) {
-      if(key == 0) {
-        digitalWrite(BRIGHT_LED_LEFT, HIGH);
-      } else if(key == 1) {
-        digitalWrite(BRIGHT_LED_RIGHT, HIGH);
-      }
-    } else {
-      if(key == 0) {
-        analogWrite(BRIGHT_LED_LEFT, val);
-      } else if(key == 1) {
-        analogWrite(BRIGHT_LED_RIGHT, val);
-      }
-    }
-  }
-
-  if(cmd2 == 'Q') {
-    if(val2 == 0) {
-      if(key2 == 0) {
-        digitalWrite(BRIGHT_LED_LEFT, LOW);
-      } else if(key2 == 1) {
-        digitalWrite(BRIGHT_LED_RIGHT, LOW);
-      }
-    } else if(val2 == 255) {
-      if(key2 == 0) {
-        digitalWrite(BRIGHT_LED_LEFT, HIGH);
-      } else if(key2 == 1) {
-        digitalWrite(BRIGHT_LED_RIGHT, HIGH);
-      }
-    } else {
-      if(key2 == 0) {
-        analogWrite(BRIGHT_LED_LEFT, val);
-      } else if(key2 == 1) {
-        analogWrite(BRIGHT_LED_RIGHT, val);
-      }
-    }
-  }
-
-
+  } // -- end of '@' action specifier
   
 }
 

@@ -100,6 +100,12 @@ struct Msg {
   char delim;
 };
 
+struct Cmd {
+  char cmd;
+  uint8_t key;
+  uint16_t val;
+};
+
 class Bowie {
   
   public:
