@@ -100,7 +100,6 @@ struct Msg {
   char delim;
 };
 
-
 class Bowie {
   
   public:

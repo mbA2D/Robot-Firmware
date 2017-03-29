@@ -45,6 +45,7 @@ Here is how packets are formatted:
 - Y = yellow button
 - B = blue button
 - W = white button
+- Q = super bright leds
 
 ### BowieSimple: Robot -> Operator
 - A = accelerometer

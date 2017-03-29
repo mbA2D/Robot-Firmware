@@ -495,18 +495,12 @@ void Operator::updateButtons() {
     white_on = !white_on;
 
     m.priority = 1;
-    m.action = '#';
-    m.cmd = 'W';
-    m.key = 0;
-
-    if(white_on) {
-      m.val = 1;
-    } else {
-      m.val = 0;
-    }
-
-    m.cmd2 = '0';
-    m.key2 = 0;
+    m.action = '@';
+    m.cmd = 'Q';
+    m.key = 1;
+    m.val = 0;
+    m.cmd2 = 'Q';
+    m.key2 = 1;
     m.val2 = 0;
     m.delim = '!';
 
@@ -515,11 +509,15 @@ void Operator::updateButtons() {
       digitalWrite(LED2, HIGH);
       digitalWrite(LED3, HIGH);
       digitalWrite(LED4, HIGH);
+      m.val = 128;
+      m.val2 = 128;
     } else {
       digitalWrite(LED1, LOW);
       digitalWrite(LED2, LOW);
       digitalWrite(LED3, LOW);
       digitalWrite(LED4, LOW);
+      m.val = 255;
+      m.val2 = 255;
     }
 
     addNextMsg(m);
@@ -528,11 +526,29 @@ void Operator::updateButtons() {
 
   if(white_on) {
     if(current_time-last_auton_blink >= 500) {
+
+      m.priority = 1;
+      m.action = '#';
+      m.cmd = 'W';
+      m.key = 0;
+
+      if(white_on) {
+        m.val = 1;
+      } else {
+        m.val = 0;
+      }
+
+      m.cmd2 = '0';
+      m.key2 = 0;
+      m.val2 = 0;
+      m.delim = '!';
+
       if(auton_blink) {
         digitalWrite(LED1, HIGH);
         digitalWrite(LED2, HIGH);
         digitalWrite(LED3, HIGH);
         digitalWrite(LED4, HIGH);
+        addNextMsg(m);
       } else {
         digitalWrite(LED1, LOW);
         digitalWrite(LED2, LOW);

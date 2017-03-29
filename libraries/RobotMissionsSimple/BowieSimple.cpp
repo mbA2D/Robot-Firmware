@@ -471,6 +471,7 @@ void Bowie::insertNextMsg(Msg m) {
      Y = yellow button
      B = blue button
      W = white button
+     Q = super bright leds
 
      Robot -> Operator
      -----------------
@@ -496,6 +497,12 @@ void Bowie::control(char action, char cmd, uint8_t key, uint16_t val, char cmd2,
   } else {
     unlikely_count = 0;
   }
+
+  // todo
+  // - make a 'cmd' struct
+  // - instantiate 2 for both cmds
+  // - add both instances to an array
+  // - makes it easier to go through both
 
   if(action == '#') { // going straight
 
@@ -727,6 +734,52 @@ void Bowie::control(char action, char cmd, uint8_t key, uint16_t val, char cmd2,
     Serial << "\nclaw angle: " << the_pos << endl;
 
   }
+
+  if(cmd == 'Q') {
+    if(val == 0) {
+      if(key == 0) {
+        digitalWrite(BRIGHT_LED_LEFT, LOW);
+      } else if(key == 1) {
+        digitalWrite(BRIGHT_LED_RIGHT, LOW);
+      }
+    } else if(val == 255) {
+      if(key == 0) {
+        digitalWrite(BRIGHT_LED_LEFT, HIGH);
+      } else if(key == 1) {
+        digitalWrite(BRIGHT_LED_RIGHT, HIGH);
+      }
+    } else {
+      if(key == 0) {
+        analogWrite(BRIGHT_LED_LEFT, val);
+      } else if(key == 1) {
+        analogWrite(BRIGHT_LED_RIGHT, val);
+      }
+    }
+  }
+
+  if(cmd2 == 'Q') {
+    if(val2 == 0) {
+      if(key2 == 0) {
+        digitalWrite(BRIGHT_LED_LEFT, LOW);
+      } else if(key2 == 1) {
+        digitalWrite(BRIGHT_LED_RIGHT, LOW);
+      }
+    } else if(val2 == 255) {
+      if(key2 == 0) {
+        digitalWrite(BRIGHT_LED_LEFT, HIGH);
+      } else if(key2 == 1) {
+        digitalWrite(BRIGHT_LED_RIGHT, HIGH);
+      }
+    } else {
+      if(key2 == 0) {
+        analogWrite(BRIGHT_LED_LEFT, val);
+      } else if(key2 == 1) {
+        analogWrite(BRIGHT_LED_RIGHT, val);
+      }
+    }
+  }
+
+
   
 }
 
