@@ -99,4 +99,4 @@ All messages can be given a priority, however this number is not sent. Lower num
 
 # Additional Information
 
-[http://robotmissions.org](RobotMissions.org)
+[RobotMissions.org](http://robotmissions.org)
