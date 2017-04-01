@@ -913,6 +913,8 @@ void Bowie::moveServos(int targetArmuS, int targetClawuS){ //arm first, claw sec
 	else
 		ArmDirection = 0;
 	
+	int old_Claw_Val = current_Claw_Val;//to allow only writing the value if it changed - avoid constantly writing the same value to servos which is not good for them
+	int old_Arm_Val = current_Arm_Val; 
 	
 	while((current_Arm_Val != targetArmuS) || (current_Claw_Val != targetClawuS)){ //must put both into this loop
 		ArmuSfromStart = current_Arm_Val - ArmstartuS;
@@ -933,9 +935,16 @@ void Bowie::moveServos(int targetArmuS, int targetClawuS){ //arm first, claw sec
 		ArmIncrement = (int)constrain((ArmuSfromPoint / MAX_SERVO_RANGE), 1, 15); //9 is the max servo travel in uS during a 5ms delay
 		current_Arm_Val += ArmIncrement * ArmDirection; //forwards or backwards
 		
-		arm.writeMicroseconds(current_Arm_Val);
-		arm2.writeMicroseconds(2200-current_Arm_Val +800);
-		claw.writeMicroseconds(current_Claw_Val);
-		delay(1);
+				//only write the value again if it changed.
+		if(current_Arm_Val != old_Arm_Val){
+		    arm.writeMicroseconds(current_Arm_Val);
+	            arm2.writeMicroseconds(MAX_SERVO_US - current_Arm_Val + MIN_SERVO_US);
+	            old_Arm_Val = current_Arm_Val;
+		}
+		if (current_Claw_Val != old_Claw_Val){
+		    claw.writeMicroseconds(current_Claw_Val);
+		    old_Arm_Val = current_Arm_Val;
+		}
+		delay(1);//very short delay, maybe not needed because all the calculations provide a delay
 	}
 }
