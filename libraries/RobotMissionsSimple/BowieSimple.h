@@ -72,13 +72,25 @@
 #define MOTOR_DIR_REV true
 
 // servo values
-#define ARM_MAX 150
-#define ARM_HOME 100
-#define ARM_MIN 30
+//the arm max svalue should be increased so that it is at least vertically in the air.
+//the claw parallel max might need to be adjusted if this is done as well
+#define ARM_MAX 1967 //150  - Arm values have been changed to uS  
+#define ARM_HOME 1578 //100
+#define ARM_MIN 1034 //30
 
-#define CLAW_MIN 1500
-#define CLAW_HOME 800
-#define CLAW_MAX 500
+#define CLAW_MIN 2200 //downwards relative to arm
+#define CLAW_HOME 1200 // - just use the parallel function
+#define CLAW_MAX 800 //upwards relative to arm
+
+#define CLAW_PARALLEL_MIN 700 //when arm is at the bottom, the value to claw that makes it parallel
+#define CLAW_PARALLEL_MAX 1500 //when arm is at the top, parallel claw value
+#define DIG_OFFSET 150 //go 200 microseconds 'up' - down relative to arm - is 200 noticeable?
+#define CLAW_DUMP_VAL CLAW_MAX //This needs to be smaller, but servo cannot rotate backwards.
+//the claw can rotate more than necessary down relative to the arm, and not far enough up relative to the arm
+#define MAX_SERVO_RANGE 1400 //from min to max uS
+
+
+#define MOTOR_DIG_SPEED 80 //Don't know how fast this is - do the motors get disabled when controlling the arm?
 
 // super bright led values
 #define MAX_BRIGHTNESS 255
@@ -162,6 +174,9 @@ class Bowie {
     Servo arm;
     Servo claw;
     Servo arm2;
+    //current servo values
+    int current_Claw_Val;
+	  int current_Arm_Val;
 
     // gpio
     bool gpio_pin1_input;
@@ -204,7 +219,14 @@ class Bowie {
     void initSensors();
     void initLeds();
     void initGPIO(uint8_t p, uint8_t state);
-
+  
+    //servo functions
+    //put a parallel claw value in current_Claw_Value
+	  int clawParallelVal(int arm_Val);
+  
+    void scoopAndDump(); //Trigger this from green button - scoops from ground and dumps over the robot
+    void moveServos(int targetArmuS, int targetClawuS); //always use this to move the servos
+  
 };
 
 #endif
