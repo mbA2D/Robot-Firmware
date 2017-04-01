@@ -92,7 +92,11 @@ void Bowie::init() {
 }
 
 void Bowie::update() {
-
+  //servo or movement test code can be put here
+  
+  //if testing, use an infinite loop after to stop other execution
+  //while (1<3){}
+  
   // specific things to do if remote operation is enabled
   if(REMOTE_OP_ENABLED) {
 
@@ -554,11 +558,14 @@ void Bowie::control(char action, char cmd, uint8_t key, uint16_t val, char cmd2,
 
       if(packets[i].cmd == 'G') { // green button
         if(packets[i].val == 1) {
+          /*
           leftBork();
           motor_setDir(0, MOTOR_DIR_REV);
           motor_setSpeed(0, 60);
           motor_setDir(1, MOTOR_DIR_REV);
           motor_setSpeed(1, 60);
+          */
+          scoopAndDump(); //instead of going backwards, use the scoop
         }
       }
 
@@ -649,18 +656,17 @@ void Bowie::control(char action, char cmd, uint8_t key, uint16_t val, char cmd2,
 
       if(packets[i].cmd == 'S') { // arm (data from 0-45)
         int the_pos = (int)map(val, 0, 45, ARM_MIN, ARM_MAX);
-
-        arm.write(the_pos);
-        arm2.write(180-the_pos);
+        //when moving the arm only, the claw will stay parallel to the ground
+	      moveServos(the_pos, clawParallelVal(the_pos)); 
 
         Serial << "\narm angle: " << the_pos << endl;
       }
 
       if(packets[i].cmd == 'C') { // claw / scoop
         int the_pos = (int)map(val, 0, 45, CLAW_MIN, CLAW_MAX);
-        claw.writeMicroseconds(the_pos);
-
-        Serial << "\nclaw angle: " << the_pos << endl;
+        moveServos(current_Arm_Val, the_pos);
+        
+        Serial << "\nclaw angle: " << the_pos << endl; //this is in uS, not degrees
       }
 
     }
@@ -698,9 +704,12 @@ void Bowie::initServos() {
   claw.attach(SERVO_END);
   arm2.attach(SERVO_ARM2);
 
-  arm.write(180-ARM_HOME);
-  arm2.write(ARM_HOME);
-  claw.writeMicroseconds(CLAW_HOME);
+  arm2.writeMicroseconds(SERVO_MAX_US - ARM_HOME + SERVO_MIN_US);
+  arm.writeMicroseconds(ARM_HOME);
+  claw.writeMicroseconds(clawParallelVal(ARM_HOME));
+  
+  current_Claw_Val = clawParallelVal(ARM_HOME);
+  current_Arm_Val = ARM_HOME;
 }
 
 void Bowie::initSensors() {
@@ -826,4 +835,107 @@ void Bowie::leftBork() {
 }
 
 
+//get a parallel claw value
+int Bowie::clawParallelVal(int arm_Val){
+	return (int)constrain(map(arm_Val, ARM_MIN, ARM_MAX, CLAW_PARALLEL_MIN, CLAW_PARALLEL_MAX) , CLAW_PARALLEL_MIN,CLAW_PARALLEL_MAX);
+} //constrain to make sure that it does not result in a value less than 800 - could make the servo rotate backwards.
 
+//scoop up from the ground and dump it over the robot
+void Bowie::scoopAndDump(){
+  moveServos(ARM_HOME, clawParallelVal(ARM_HOME)); //start at home positions - not really needed (will just dig from whereever it is)
+  moveServos(ARM_MIN, clawParallelVal(ARM_MIN));//move arm to ground (keep claw parallel)
+  moveServos(current_Arm_Val, current_Claw_Val + DIG_OFFSET);//dig claw in (apply DIG_OFFSET)
+
+  motor_setDir(1, MOTOR_DIR_FWD);
+  motor_setDir(0, MOTOR_DIR_FWD);
+	motor_setSpeed(1, MOTOR_DIG_SPEED); //dig speed might not be fast enough
+	motor_setSpeed(0,MOTOR_DIG_SPEED);
+	delay(1500);
+	//stop the motors
+	motor_setBrake(0);
+	motor_setBrake(1);
+  
+  moveServos(current_Arm_Val, current_Claw_Val - DIG_OFFSET);  //claw back to parallel
+  moveServos(ARM_MAX, clawParallelVal(ARM_MAX));//move arm up to top (keep claw parallel)
+  moveServos(current_Arm_Val, CLAW_DUMP_VAL);//dump claw
+  moveServos(current_Arm_Val, clawParallelVal(ARM_MAX));//claw back to parallel
+  moveServos(ARM_HOME, clawParallelVal(ARM_HOME));//back to home
+}
+  
+  
+//this is a combination of the two indivual movement functions
+//next step - make the servos reach their endpoints at the same time
+//could also add controling it by degrees - if target is <= 180, map to uS, then continue
+//to add - keep claw parallel if only moving the arm
+//to add - if the end value is parallel for the claw, move the arm and keep the claw parallel
+void Bowie::moveServos(int targetArmuS, int targetClawuS){ //arm first, claw second
+	//claw values
+	targetClawuS = constrain(targetClawuS, CLAW_MAX, CLAW_MIN); //claw max is smaller
+	int ClawDiff = targetClawuS - current_Claw_Val;
+	int ClawDirection;
+	int ClawStartuS = current_Claw_Val;
+	
+	int ClawuSfromStart;
+	int ClawuSfromEnd;
+	float ClawuSfromPoint;
+	
+	int ClawIncrement;
+	
+	//arm values
+	targetArmuS = constrain(targetArmuS, ARM_MIN, ARM_MAX);
+	int ArmDiff = targetArmuS - current_Arm_Val;
+	int ArmDirection;
+	int ArmstartuS = current_Arm_Val;
+	
+	int ArmuSfromStart;
+	int ArmuSfromEnd;
+	float ArmuSfromPoint;
+	
+	int ArmIncrement;
+	
+	//Claw Direction
+	if (ClawDiff == 0)
+		ClawDirection = 0;
+	else if (ClawDiff < 0) //if target is less than current, go backwards
+		ClawDirection  = -1;
+	else if (ClawDiff > 0)
+		ClawDirection = 1; //if target is greater than 0, go forwards (increase servo value)
+	else 
+		ClawDirection = 0;
+	
+	//Arm Direction
+	if (ArmDiff == 0)
+		ArmDirection = 0;
+	else if (ArmDiff < 0) //if target is less than current, go backwards
+		ArmDirection  = -1;
+	else if (ArmDiff > 0)
+		ArmDirection = 1; //if target is greater than 0, go forwards (increase servo value)
+	else
+		ArmDirection = 0;
+	
+	
+	while((current_Arm_Val != targetArmuS) || (current_Claw_Val != targetClawuS)){ //must put both into this loop
+		ArmuSfromStart = current_Arm_Val - ArmstartuS;
+		ArmuSfromEnd = targetArmuS - current_Arm_Val;
+		ArmuSfromStart = abs(ArmuSfromStart); //abs must be comuted on a number, any math should be done outside the function
+		ArmuSfromEnd = abs(ArmuSfromEnd);
+		ArmuSfromPoint = (float)min(ArmuSfromStart, ArmuSfromEnd);
+		
+		ClawuSfromStart = current_Claw_Val - ClawStartuS;
+		ClawuSfromEnd = targetClawuS - current_Claw_Val;
+		ClawuSfromStart = abs(ClawuSfromStart); //abs mClawuSt be comuted on a number, any math should be done outside the function
+		ClawuSfromEnd = abs(ClawuSfromEnd);
+		ClawuSfromPoint = (float)min(ClawuSfromStart, ClawuSfromEnd);
+		
+		ClawIncrement = (int)constrain((ClawuSfromPoint / MAX_SERVO_RANGE), 1, 15); //9 is the max servo travel in uS during a 5ms delay
+		current_Claw_Val += ClawIncrement * ClawDirection; //forwards or backwards
+		
+		ArmIncrement = (int)constrain((ArmuSfromPoint / MAX_SERVO_RANGE), 1, 15); //9 is the max servo travel in uS during a 5ms delay
+		current_Arm_Val += ArmIncrement * ArmDirection; //forwards or backwards
+		
+		arm.writeMicroseconds(current_Arm_Val);
+		arm2.writeMicroseconds(2200-current_Arm_Val +800);
+		claw.writeMicroseconds(current_Claw_Val);
+		delay(1);
+	}
+}
