@@ -88,7 +88,8 @@
 #define CLAW_DUMP_VAL CLAW_MAX //This needs to be smaller, but servo cannot rotate backwards.
 //the claw can rotate more than necessary down relative to the arm, and not far enough up relative to the arm
 #define MAX_SERVO_RANGE 1400 //from min to max uS
-
+#define SERVO_MAX_US 2200 //from datasheet
+#define SERVO_MIN_US 800
 
 #define MOTOR_DIG_SPEED 80 //Don't know how fast this is - do the motors get disabled when controlling the arm?
 
@@ -221,8 +222,7 @@ class Bowie {
     void initGPIO(uint8_t p, uint8_t state);
   
     //servo functions
-    //put a parallel claw value in current_Claw_Value
-	  int clawParallelVal(int arm_Val);
+    int clawParallelVal(int arm_Val); //returns the claw value that is parallel to the ground at the specified arm value
   
     void scoopAndDump(); //Trigger this from green button - scoops from ground and dumps over the robot
     void moveServos(int targetArmuS, int targetClawuS); //always use this to move the servos
